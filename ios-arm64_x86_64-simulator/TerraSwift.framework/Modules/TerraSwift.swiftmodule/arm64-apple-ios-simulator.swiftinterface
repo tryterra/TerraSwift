@@ -1,0 +1,60 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name TerraSwift
+import CoreLocation
+import Foundation
+import HealthKit
+import Swift
+import SwiftUI
+@_exported import TerraSwift
+import UIKit
+import _Concurrency
+public func connectTerra(dev_id: Swift.String, xAPIKey: Swift.String, uniqueAppleID: Swift.String = "") -> Swift.String
+public class Terra {
+  @available(iOS 10.0, *)
+  public init(user_id: Swift.String, dev_id: Swift.String, xAPIKey: Swift.String, auto: Swift.Bool = true, readTypes: Swift.Set<HealthKit.HKObjectType> = Set([HKObjectType.workoutType(),
+                                                     HKObjectType.activitySummaryType(),
+                                                     HKObjectType.quantityType(forIdentifier:.activeEnergyBurned)!,
+                                                     HKQuantityType.quantityType(forIdentifier: .stepCount)!,
+                                                     HKObjectType.quantityType(forIdentifier: .heartRate)!,
+                                                     HKObjectType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
+                                                     HKObjectType.quantityType(forIdentifier: .vo2Max)!,
+                                                     HKObjectType.quantityType(forIdentifier: .height)!,
+                                                     HKObjectType.quantityType(forIdentifier: .appleExerciseTime)!,
+                                                     HKObjectType.quantityType(forIdentifier: .bodyMass)!,
+                                                     HKObjectType.quantityType(forIdentifier: .flightsClimbed)!,
+                                                     HKObjectType.quantityType(forIdentifier: .bodyMassIndex)!,
+                                                     HKObjectType.quantityType(forIdentifier: .bodyFatPercentage)!,
+                                                     HKObjectType.quantityType(forIdentifier: .distanceSwimming)!,
+                                                     HKObjectType.quantityType(forIdentifier: .distanceCycling)!,
+                                                     HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
+                                                     HKObjectType.characteristicType(forIdentifier: .biologicalSex)!,
+                                                     HKObjectType.characteristicType(forIdentifier: .dateOfBirth)!,
+                                                     HKObjectType.quantityType(forIdentifier: .basalEnergyBurned)!,
+                                                     HKObjectType.quantityType(forIdentifier: .swimmingStrokeCount)!,
+                                                     HKObjectType.quantityType(forIdentifier: .restingHeartRate)!,
+                                                     HKObjectType.quantityType(forIdentifier: .bloodPressureDiastolic)!,
+                                                     HKObjectType.quantityType(forIdentifier: .bloodPressureSystolic)!,
+                                                     HKObjectType.quantityType(forIdentifier: .bodyTemperature)!,
+                                                     HKObjectType.quantityType(forIdentifier: .leanBodyMass)!,
+                                                     HKObjectType.quantityType(forIdentifier: .oxygenSaturation)!,
+                                                     HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!,
+                                                     HKObjectType.quantityType(forIdentifier: .respiratoryRate)!,
+                                                     HKSeriesType.workoutRoute()
+                                                    ]))
+  public func getAthlete()
+  public func getDaily(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
+  public func getBody(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
+  public func getSleep(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
+  public func getWorkout(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
+  @objc deinit
+}
+extension Foundation.Date {
+  public static func mondayAt12AM() -> Foundation.Date
+  public static func todayAt12AM(date: Foundation.Date) -> Foundation.Date
+  public static func convertToUTC(dateToConvert: Foundation.Date) -> Foundation.Date
+}
+extension Foundation.Date : Swift.Strideable {
+  public func distance(to other: Foundation.Date) -> Foundation.TimeInterval
+  public func advanced(by n: Foundation.TimeInterval) -> Foundation.Date
+}
