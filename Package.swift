@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "Terra-Swift",
+    name: "TerraSwift",
     platforms: [
         .iOS(.v13)
     ],
