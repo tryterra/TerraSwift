@@ -1,4 +1,4 @@
-# Terra-Swift
+# TerraSwift
 
 This library allows developers to connect to TERRA ENABLING DEVELOPERS LTD. through Swift (implemented with Swift5.0).
 This library uses HealthKit for iOS v13+. It thus would not work on iPad or MacOS or any platform that does not support [Apple HealthKit](https://developer.apple.com/health-fitness/). (Must have signing capabilities for Healthkit and enable Background Delivery)
