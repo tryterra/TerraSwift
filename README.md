@@ -45,10 +45,9 @@ This set can then passed as the parameter `readTypes` when initiating the Terra 
 ## Usage
 Start by connecting to Terra through our API as documented [here](https://docs.tryterra.co). To make this easier, there is a function provided by this package which allows your users to connect with Terra. By simply giving us your `dev-id` and `X-API-Key` that we provide for you when you sign up with us, you can register a user by simply running this function:
 
-Note: The user apple ID (`uniqueAppleID`) is not "Required" and will be set to empty by default. However this field will be useful for us to help make sure there are no duplicate connects for the same user.  
 
 ```swift
-var userId: String = TerraSwift.connectTerra(dev_id: "YOUR_DEV_ID", xAPIKey: "YOUR_API_KEY", uniqueAppleID: "USER_APPLE_ID")
+var userId: String = TerraSwift.connectTerra(dev_id: "YOUR_DEV_ID", xAPIKey: "YOUR_API_KEY")
 ```
 
 This will return a userId for which you may now use to acquire data with.
