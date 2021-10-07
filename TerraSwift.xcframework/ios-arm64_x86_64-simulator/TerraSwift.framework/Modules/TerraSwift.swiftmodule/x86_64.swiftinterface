@@ -9,7 +9,7 @@ import SwiftUI
 @_exported import TerraSwift
 import UIKit
 import _Concurrency
-public func connectTerra(dev_id: Swift.String, xAPIKey: Swift.String, uniqueAppleID: Swift.String = "") -> Swift.String
+public func connectTerra(dev_id: Swift.String, xAPIKey: Swift.String, uniqueAppleID: Swift.String = UIDevice.current.identifierForVendor!.uuidString) -> Swift.String
 public class Terra {
   @available(iOS 10.0, *)
   public init(user_id: Swift.String, dev_id: Swift.String, xAPIKey: Swift.String, auto: Swift.Bool = true, readTypes: Swift.Set<HealthKit.HKObjectType> = Set([HKObjectType.workoutType(),
