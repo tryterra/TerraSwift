@@ -51,7 +51,6 @@ public class Terra {
   public func getWorkout(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
   @objc deinit
 }
-public func connectTerraWidget(dev_id: Swift.String, xAPIKey: Swift.String) -> Swift.String
 extension Foundation.URL {
   public subscript(queryParam: Swift.String) -> Swift.String? {
     get
