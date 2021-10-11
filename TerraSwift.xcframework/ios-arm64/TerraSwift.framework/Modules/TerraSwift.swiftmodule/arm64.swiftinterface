@@ -55,7 +55,8 @@ public class Terra {
   @_Concurrency.MainActor(unsafe) public func makeUIView(context: SwiftUI.UIViewRepresentableContext<TerraSwift.TerraWidget>) -> WebKit.WKWebView
   @_Concurrency.MainActor(unsafe) public func updateUIView(_ uiView: WebKit.WKWebView, context: SwiftUI.UIViewRepresentableContext<TerraSwift.TerraWidget>)
   @_Concurrency.MainActor(unsafe) public func close()
-  @objc @_hasMissingDesignatedInitializers public class Coordinator : ObjectiveC.NSObject, WebKit.WKNavigationDelegate {
+  @objc public class Coordinator : ObjectiveC.NSObject, WebKit.WKNavigationDelegate {
+    public init(_ widget: TerraSwift.WebViewTerra)
     @objc public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
     @objc deinit
   }
@@ -63,7 +64,8 @@ public class Terra {
   public typealias Body = Swift.Never
   public typealias UIViewType = WebKit.WKWebView
 }
-@_hasMissingDesignatedInitializers public class WebViewTerra : Foundation.ObservableObject {
+public class WebViewTerra : Foundation.ObservableObject {
+  public init(dev_id: Swift.String, xAPIKey: Swift.String, additionalParams: Swift.String)
   public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
   @objc deinit
 }
