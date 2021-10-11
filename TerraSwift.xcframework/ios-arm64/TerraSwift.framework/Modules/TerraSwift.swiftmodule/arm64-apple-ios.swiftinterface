@@ -57,6 +57,14 @@ extension Foundation.URL {
   }
 }
 @_Concurrency.MainActor(unsafe) public struct TerraWidget : SwiftUI.UIViewRepresentable, SwiftUI.View {
+  @SwiftUI.ObservedObject @_projectedValueProperty($widget) @_Concurrency.MainActor(unsafe) public var widget: TerraSwift.WebViewTerra {
+    get
+    set
+    _modify
+  }
+  @_Concurrency.MainActor(unsafe) public var $widget: SwiftUI.ObservedObject<TerraSwift.WebViewTerra>.Wrapper {
+    get
+  }
   @_Concurrency.MainActor(unsafe) public init(webViewTerra: TerraSwift.WebViewTerra)
   @_Concurrency.MainActor(unsafe) public func makeUIView(context: SwiftUI.UIViewRepresentableContext<TerraSwift.TerraWidget>) -> WebKit.WKWebView
   @_Concurrency.MainActor(unsafe) public func updateUIView(_ uiView: WebKit.WKWebView, context: SwiftUI.UIViewRepresentableContext<TerraSwift.TerraWidget>)
