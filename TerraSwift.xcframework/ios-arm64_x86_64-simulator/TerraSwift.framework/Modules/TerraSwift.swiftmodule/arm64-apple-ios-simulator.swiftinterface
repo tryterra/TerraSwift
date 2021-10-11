@@ -51,6 +51,11 @@ public class Terra {
   public func getWorkout(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
   @objc deinit
 }
+extension Foundation.URL {
+  public subscript(queryParam: Swift.String) -> Swift.String? {
+    get
+  }
+}
 @_Concurrency.MainActor(unsafe) public struct TerraWidget : SwiftUI.UIViewRepresentable, SwiftUI.View {
   @_Concurrency.MainActor(unsafe) public init(webViewTerra: TerraSwift.WebViewTerra)
   @_Concurrency.MainActor(unsafe) public func makeUIView(context: SwiftUI.UIViewRepresentableContext<TerraSwift.TerraWidget>) -> WebKit.WKWebView
