@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
 // swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name TerraSwift
+import Combine
 import CoreLocation
 import Foundation
 import HealthKit
@@ -8,6 +9,7 @@ import Swift
 import SwiftUI
 @_exported import TerraSwift
 import UIKit
+import WebKit
 import _Concurrency
 public func connectTerra(dev_id: Swift.String, xAPIKey: Swift.String) -> Swift.String
 public class Terra {
@@ -47,6 +49,22 @@ public class Terra {
   public func getBody(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
   public func getSleep(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
   public func getWorkout(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
+  @objc deinit
+}
+@_Concurrency.MainActor(unsafe) public struct TerraWidget : SwiftUI.UIViewRepresentable {
+  @_Concurrency.MainActor(unsafe) public func makeUIView(context: SwiftUI.UIViewRepresentableContext<TerraSwift.TerraWidget>) -> WebKit.WKWebView
+  @_Concurrency.MainActor(unsafe) public func updateUIView(_ uiView: WebKit.WKWebView, context: SwiftUI.UIViewRepresentableContext<TerraSwift.TerraWidget>)
+  @_Concurrency.MainActor(unsafe) public func close()
+  @objc @_hasMissingDesignatedInitializers public class Coordinator : ObjectiveC.NSObject, WebKit.WKNavigationDelegate {
+    @objc public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+    @objc deinit
+  }
+  @_Concurrency.MainActor(unsafe) public func makeCoordinator() -> TerraSwift.TerraWidget.Coordinator
+  public typealias Body = Swift.Never
+  public typealias UIViewType = WebKit.WKWebView
+}
+@_hasMissingDesignatedInitializers public class WebViewTerra : Foundation.ObservableObject {
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
   @objc deinit
 }
 extension Foundation.Date {
