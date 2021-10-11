@@ -51,7 +51,7 @@ public class Terra {
   public func getWorkout(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
   @objc deinit
 }
-@_Concurrency.MainActor(unsafe) public struct TerraWidget : SwiftUI.UIViewRepresentable {
+@_Concurrency.MainActor(unsafe) public struct TerraWidget : SwiftUI.UIViewRepresentable, SwiftUI.View {
   @SwiftUI.ObservedObject @_projectedValueProperty($widget) @_Concurrency.MainActor(unsafe) public var widget: TerraSwift.WebViewTerra {
     get
     set
