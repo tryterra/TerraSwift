@@ -58,7 +58,7 @@ Using this user ID, you may now create a Terra Client as such:
 var TerraClient: TerraSwift.Terra = TerraSwift.Terra(user_id: user_id, dev_id: "YOUR_DEV_ID", xAPIKey: "YOUR_API_KEY", auto: true, readTypes: "YOUR_CUSTOM_HKOBJECT_SET")
 ```
 
-Upon initializing, the Client will automatically push workout details of the user to your callback url every 20 minutes. If the Healthkit Background Delivery is enabled, the workout details will be pushed upon workout update instead. It will also automatically push Daily, Sleep, and Body Data to your callback url every 8 hours. However this can only occur when the user enters your application. This feature is controlled by the `auto` parameter. By default, it is set to `true`. However if you wish to make other timed requests, you may create your own timer and use the functions described below while setting `auto` to `false`.
+Upon initializing, the Client will automatically push workout details of the user to your callback url everytime they open your application. It will also automatically push Daily, Sleep, and Body Data to your callback url every 8 hours. However this can only occur when the user enters your application. This feature is controlled by the `auto` parameter. By default, it is set to `true`. However if you wish to make other timed requests, you may create your own timer and use the functions described below while setting `auto` to `false`.
 
 ## Requests
 
