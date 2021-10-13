@@ -92,3 +92,12 @@ The following function will push athlete data to your webhook URL. (No parameter
 ```swift
 TerraClient.getAthlete()
 ```
+
+## Deauthorize
+
+To deauthorize a user, please follow our Deauthentication Endpoint on the [Docs](https://docs.tryterra.co/authentication-flow).
+In addition to this, please also set the client instance to `nil`:
+
+```swift
+TerraClient = nil
+```
