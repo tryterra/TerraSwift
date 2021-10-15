@@ -8,7 +8,7 @@ The package must be added as a dependency to your project. This can be done simp
 You may now import the package using: `import TerraSwift`
 
 ## Permissions
-As default, we have enabled all our required healthkit HKObjectTypes for the functionality of the whole package. However if there are healthkit parameters for which you do not wish to be included, you may input a custom set of HKObjectTypes as a subset of the following:
+As default, we have enabled all our required healthkit HKObjectTypes for the functionality of the whole package. However if there are healthkit parameters for which you do not wish to be included, you may input a custom set of `HKObjectTypes` as a subset of the following:
 
 - Workouts
 - Activity Summary 
