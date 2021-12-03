@@ -10,6 +10,7 @@ import SwiftUI
 import UIKit
 import _Concurrency
 public func connectTerra(dev_id: Swift.String, xAPIKey: Swift.String) -> Swift.String
+public func disconnectTerra(dev_id: Swift.String, xAPIKey: Swift.String, user_id: Swift.String)
 public class Terra {
   @available(iOS 10.0, *)
   public init(user_id: Swift.String, dev_id: Swift.String, xAPIKey: Swift.String, auto: Swift.Bool = true, readTypes: Swift.Set<HealthKit.HKObjectType> = Set([HKObjectType.workoutType(),
@@ -42,12 +43,12 @@ public class Terra {
                                                      HKObjectType.quantityType(forIdentifier: .respiratoryRate)!,
                                                      HKSeriesType.workoutRoute()
                                                     ]), enableHr: Swift.Bool = false)
+  @objc deinit
   public func getAthlete()
   public func getDaily(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
   public func getBody(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
   public func getSleep(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
   public func getWorkout(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
-  @objc deinit
 }
 extension Foundation.Date {
   public static func mondayAt12AM() -> Foundation.Date
