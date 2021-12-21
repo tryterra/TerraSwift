@@ -3,6 +3,10 @@
 This library allows developers to connect to TERRA through Swift (implemented with Swift5.0).
 This library uses HealthKit for iOS v13+. It thus would not work on iPad or MacOS or any platform that does not support [Apple HealthKit](https://developer.apple.com/health-fitness/). (Must have signing capabilities for Healthkit)
 
+Also must include the following keys in your `Info.plist` file:
+`Privacy - Health Share Usage Description`
+`Privacy - Health Records Usage Description`
+
 The package must be added as a dependency to your project. This can be done simply by editting your App's dependencies and adding `TerraSwift` as a dependency with the following location: `https://github.com/tryterra/TerraSwift.git`.
 
 You may now import the package using: `import TerraSwift`
