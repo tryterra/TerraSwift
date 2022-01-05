@@ -99,8 +99,8 @@ TerraClient.getAthlete()
 ## Deauthorize
 
 To deauthorize a user, please follow our Deauthentication Endpoint on the [Docs](https://docs.tryterra.co/authentication-flow).
-In addition to this, please also set the client instance to `nil`:
+To make this easier, we have addded a function within the package to this:
 
 ```swift
-TerraClient = nil
+TerraCient.disconnectFromTerra()
 ```
