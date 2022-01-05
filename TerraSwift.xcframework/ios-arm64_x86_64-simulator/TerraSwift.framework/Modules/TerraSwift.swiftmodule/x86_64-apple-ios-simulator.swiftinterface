@@ -43,6 +43,7 @@ public class Terra {
                                                      HKObjectType.quantityType(forIdentifier: .respiratoryRate)!,
                                                      HKSeriesType.workoutRoute()
                                                     ]), enableHr: Swift.Bool = false)
+  public func disconnectFromTerra()
   public func getAthlete()
   public func getDaily(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
   public func getBody(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
