@@ -9,7 +9,7 @@ import SwiftUI
 @_exported import TerraSwift
 import UIKit
 import _Concurrency
-public func connectTerra(dev_id: Swift.String, xAPIKey: Swift.String, referenceId: Swift.String? = nil) -> Swift.String
+public func connectTerra(dev_id: Swift.String, xAPIKey: Swift.String, referenceId: Swift.String = "") -> Swift.String
 public func disconnectTerra(dev_id: Swift.String, xAPIKey: Swift.String, user_id: Swift.String)
 public class Terra {
   @available(iOS 10.0, *)
