@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   spec.author             = { "JaafarRammal" => "jarammal@gmail.com" }
   spec.platform     = :ios
   spec.ios.deployment_target = "12.0"
-  spec.source       = { :git => "https://github.com/tryterra/TerraSwift.git", :tag => "1.0.5" }
-  spec.source_files  = "**/*.*"
-  spec.swift_version = '4.2'
+  spec.source       = { :git => "https://github.com/tryterra/TerraSwift.git", :tag => "v#{spec.version}"}
+  spec.swift_version = "4.2"
+  spec.vendored_frameworks = "TerraSwift.xcframework"  
 end
