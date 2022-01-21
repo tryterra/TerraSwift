@@ -9,7 +9,13 @@ import SwiftUI
 @_exported import TerraSwift
 import UIKit
 import _Concurrency
-public func connectTerra(dev_id: Swift.String, xAPIKey: Swift.String, referenceId: Swift.String? = nil) -> Swift.String
+public struct TerraAuthResponse : Swift.Decodable {
+  public var status: Swift.String
+  public var user_id: Swift.String
+  public var reference_id: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+}
+public func connectTerra(dev_id: Swift.String, xAPIKey: Swift.String, referenceId: Swift.String? = nil) -> TerraSwift.TerraAuthResponse?
 public func disconnectTerra(dev_id: Swift.String, xAPIKey: Swift.String, user_id: Swift.String)
 public class Terra {
   @available(iOS 10.0, *)
