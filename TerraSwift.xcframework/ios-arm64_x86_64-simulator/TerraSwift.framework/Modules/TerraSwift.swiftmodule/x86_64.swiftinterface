@@ -11,9 +11,8 @@ import UIKit
 import _Concurrency
 public struct TerraAuthResponse : Swift.Decodable {
   public var status: Swift.String
-  public var user_id: Swift.String?
+  public var user_id: Swift.String
   public var reference_id: Swift.String?
-  public var message: Swift.String?
   public init(from decoder: Swift.Decoder) throws
 }
 public func connectTerra(dev_id: Swift.String, xAPIKey: Swift.String, referenceId: Swift.String? = nil) -> TerraSwift.TerraAuthResponse?
