@@ -176,6 +176,40 @@ public struct TerraAthleteData : Swift.Decodable {
   public var country: Swift.String?
   public init(from decoder: Swift.Decoder) throws
 }
+public struct TerraMacrosModel : Swift.Decodable {
+  public var sodium: Swift.Double?
+  public var protein: Swift.Double?
+  public var carbohydrates: Swift.Double?
+  public var fiber: Swift.Double?
+  public var cholesterol: Swift.Double?
+  public var fat: Swift.Double?
+  public var sugar: Swift.Double?
+  public var vitamin_C: Swift.Double?
+  public var vitamin_A: Swift.Double?
+  public var calories: Swift.Double?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct TerraMealData : Swift.Decodable {
+  public var name: Swift.String?
+  public var macros: TerraSwift.TerraMacrosModel?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct TerraNutritonMetaData : Swift.Decodable {
+  public var start_time: Swift.String?
+  public var end_time: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct TerraNutritonSummary : Swift.Decodable {
+  public var macros: TerraSwift.TerraMacrosModel?
+  public var water: Swift.Double?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct TerraNutritionData : Swift.Decodable {
+  public var meals: [TerraSwift.TerraMealData]?
+  public var summary: TerraSwift.TerraNutritonSummary?
+  public var metadata: TerraSwift.TerraNutritonMetaData?
+  public init(from decoder: Swift.Decoder) throws
+}
 public struct authenticateUserPayload : Swift.Decodable {
   public var status: Swift.String?
   public var auth_url: Swift.String?
@@ -560,40 +594,6 @@ public struct TerraActivityData : Swift.Decodable {
   public var distance_data: TerraSwift.TerraDistanceData?
   public var calories_data: TerraSwift.TerraCaloriesData?
   public var position_data: TerraSwift.TerraPositionData?
-  public init(from decoder: Swift.Decoder) throws
-}
-public struct TerraMacrosModel : Swift.Decodable {
-  public var sodium: Swift.Double?
-  public var protein: Swift.Double?
-  public var carbohydrates: Swift.Double?
-  public var fiber: Swift.Double?
-  public var cholesterol: Swift.Double?
-  public var fat: Swift.Double?
-  public var sugar: Swift.Double?
-  public var vitamin_C: Swift.Double?
-  public var vitamin_A: Swift.Double?
-  public var calories: Swift.Double?
-  public init(from decoder: Swift.Decoder) throws
-}
-public struct TerraMealData : Swift.Decodable {
-  public var name: Swift.String?
-  public var macros: TerraSwift.TerraMacrosModel?
-  public init(from decoder: Swift.Decoder) throws
-}
-public struct TerraNutritonMetaData : Swift.Decodable {
-  public var start_time: Swift.String?
-  public var end_time: Swift.String?
-  public init(from decoder: Swift.Decoder) throws
-}
-public struct TerraNutritonSummary : Swift.Decodable {
-  public var macros: TerraSwift.TerraMacrosModel?
-  public var water: Swift.Double?
-  public init(from decoder: Swift.Decoder) throws
-}
-public struct TerraNutritionData : Swift.Decodable {
-  public var meals: [TerraSwift.TerraMealData]?
-  public var summary: TerraSwift.TerraNutritonSummary?
-  public var metadata: TerraSwift.TerraNutritonMetaData?
   public init(from decoder: Swift.Decoder) throws
 }
 public struct TerraOxygenData : Swift.Decodable {
