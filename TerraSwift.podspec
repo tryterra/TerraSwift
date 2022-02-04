@@ -9,7 +9,7 @@ Pod::Spec.new do |spec|
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author             = { "JaafarRammal" => "jarammal@gmail.com" }
   spec.platform     = :ios
-  spec.ios.deployment_target = "12.0"
+  spec.ios.deployment_target = "13.0"
   spec.source       = { :git => "https://github.com/tryterra/TerraSwift.git", :tag => "v#{spec.version}"}
   spec.swift_version = "4.2"
   spec.vendored_frameworks = "TerraSwift.xcframework"  
