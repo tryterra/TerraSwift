@@ -11,15 +11,17 @@ import UIKit
 import _Concurrency
 public struct TerraAuthResponse : Swift.Decodable {
   public var status: Swift.String
-  public var user_id: Swift.String
+  public var user_id: Swift.String?
   public var reference_id: Swift.String?
+  public var message: Swift.String?
   public init(from decoder: Swift.Decoder) throws
 }
 public func connectTerra(dev_id: Swift.String, xAPIKey: Swift.String, referenceId: Swift.String? = nil) -> TerraSwift.TerraAuthResponse?
 public func disconnectTerra(dev_id: Swift.String, xAPIKey: Swift.String, user_id: Swift.String)
 public class Terra {
+  final public let user_id: Swift.String?
   @available(iOS 10.0, *)
-  public init(user_id: Swift.String, dev_id: Swift.String, xAPIKey: Swift.String, auto: Swift.Bool = true, bodySleepDailyInterval: Swift.Double = 60*60*8, readTypes: Swift.Set<HealthKit.HKObjectType> = Set([HKObjectType.workoutType(),
+  public init(dev_id: Swift.String, xAPIKey: Swift.String, user_id: Swift.String? = nil, auto: Swift.Bool = true, bodySleepDailyInterval: Swift.Double = 60*60*8, readTypes: Swift.Set<HealthKit.HKObjectType> = Set([HKObjectType.workoutType(),
                                                      HKObjectType.activitySummaryType(),
                                                      HKObjectType.quantityType(forIdentifier:.activeEnergyBurned)!,
                                                      HKQuantityType.quantityType(forIdentifier: .stepCount)!,
@@ -47,13 +49,25 @@ public class Terra {
                                                      HKObjectType.quantityType(forIdentifier: .oxygenSaturation)!,
                                                      HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!,
                                                      HKObjectType.quantityType(forIdentifier: .respiratoryRate)!,
+                                                     HKObjectType.quantityType(forIdentifier: .dietarySodium)!,
+                                                     HKObjectType.quantityType(forIdentifier: .dietaryProtein)!,
+                                                     HKObjectType.quantityType(forIdentifier: .dietaryCarbohydrates)!,
+                                                     HKObjectType.quantityType(forIdentifier: .dietaryFiber)!,
+                                                     HKObjectType.quantityType(forIdentifier: .dietaryCholesterol)!,
+                                                     HKObjectType.quantityType(forIdentifier: .dietaryFatTotal)!,
+                                                     HKObjectType.quantityType(forIdentifier: .dietarySugar)!,
+                                                     HKObjectType.quantityType(forIdentifier: .dietaryVitaminC)!,
+                                                     HKObjectType.quantityType(forIdentifier: .dietaryVitaminA)!,
+                                                     HKObjectType.quantityType(forIdentifier: .dietaryEnergyConsumed)!,
+                                                     HKObjectType.quantityType(forIdentifier: .dietaryWater)!,
                                                      HKSeriesType.workoutRoute()
-                                                    ]), enableHr: Swift.Bool = false)
-  public func disconnectFromTerra()
+                                                    ]), enableHr: Swift.Bool = false) throws
+  public func disconnectFromTerra(user_id: Swift.String)
   public func getAthlete()
   public func getDaily(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
   public func getBody(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
   public func getSleep(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
+  public func getNutrition(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
   public func getWorkout(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date())
   @objc deinit
 }
@@ -65,6 +79,7 @@ public class TerraClient {
   public func getAthlete(startDate: Foundation.TimeInterval = Date.todayAt12AM(date: Date()).timeIntervalSince1970, endDate: Foundation.TimeInterval = Date().timeIntervalSince1970, toWebhook: Swift.Bool = true) -> TerraSwift.TerraAthleteDataPayloadModel?
   public func getMenstruation(startDate: Foundation.TimeInterval = Date.todayAt12AM(date: Date()).timeIntervalSince1970, endDate: Foundation.TimeInterval = Date().timeIntervalSince1970, toWebhook: Swift.Bool = true) -> TerraSwift.TerraMenstruationDataPayloadModel?
   public func getSleep(startDate: Foundation.TimeInterval = Date.todayAt12AM(date: Date()).timeIntervalSince1970, endDate: Foundation.TimeInterval = Date().timeIntervalSince1970, toWebhook: Swift.Bool = true) -> TerraSwift.TerraSleepDataPayloadModel?
+  public func getNutrition(startDate: Foundation.TimeInterval = Date.todayAt12AM(date: Date()).timeIntervalSince1970, endDate: Foundation.TimeInterval = Date().timeIntervalSince1970, toWebhook: Swift.Bool = true) -> TerraSwift.TerraSleepDataPayloadModel?
   @objc deinit
 }
 public struct TerraBreathsData : Swift.Decodable {
@@ -207,7 +222,7 @@ public struct ElevationSample : Swift.Decodable {
   public var timer_duration_seconds: Swift.Double?
   public init(from decoder: Swift.Decoder) throws
 }
-public struct GlucodeDataSample : Swift.Decodable {
+public struct GlucoseDataSample : Swift.Decodable {
   public var timestamp: Swift.String
   public var blood_glucose_mg_per_dL: Swift.Double?
   public var glucose_level_flag: Swift.Int
@@ -448,6 +463,15 @@ public struct TerraMenstruationDataPayloadModel : Swift.Decodable {
   public var status: Swift.String
   public init(from decoder: Swift.Decoder) throws
 }
+public struct TerraNutritionDataPayloadModel : Swift.Decodable {
+  public var user: TerraSwift.TerraUserModel
+  public var data: [TerraSwift.TerraNutritionData]?
+  public var message: Swift.String?
+  public var reference: Swift.String?
+  public var type: Swift.String?
+  public var status: Swift.String
+  public init(from decoder: Swift.Decoder) throws
+}
 public struct TerraEnergyData : Swift.Decodable {
   public var energy_kilojoules: Swift.Double?
   public var energy_planned_kilojoules: Swift.Double?
@@ -538,6 +562,40 @@ public struct TerraActivityData : Swift.Decodable {
   public var position_data: TerraSwift.TerraPositionData?
   public init(from decoder: Swift.Decoder) throws
 }
+public struct TerraMacrosModel : Swift.Decodable {
+  public var sodium: Swift.Double?
+  public var protein: Swift.Double?
+  public var carbohydrates: Swift.Double?
+  public var fiber: Swift.Double?
+  public var cholesterol: Swift.Double?
+  public var fat: Swift.Double?
+  public var sugar: Swift.Double?
+  public var vitamin_C: Swift.Double?
+  public var vitamin_A: Swift.Double?
+  public var calories: Swift.Double?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct TerraMealData : Swift.Decodable {
+  public var name: Swift.String?
+  public var macros: TerraSwift.TerraMacrosModel?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct TerraNutritonMetaData : Swift.Decodable {
+  public var start_time: Swift.String?
+  public var end_time: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct TerraNutritonSummary : Swift.Decodable {
+  public var macros: TerraSwift.TerraMacrosModel?
+  public var water: Swift.Double?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct TerraNutritionData : Swift.Decodable {
+  public var meals: [TerraSwift.TerraMealData]?
+  public var summary: TerraSwift.TerraNutritonSummary?
+  public var metadata: TerraSwift.TerraNutritonMetaData?
+  public init(from decoder: Swift.Decoder) throws
+}
 public struct TerraOxygenData : Swift.Decodable {
   public var saturation_percentage: Swift.Double?
   public var max_volume_ml_per_min_per_kg: Swift.Double?
@@ -548,7 +606,7 @@ public struct TerraInsulinData : Swift.Decodable {
   public var insulin_units: Swift.Double?
   public var insulin_type: Swift.String?
   public var day_avg_blood_glucose_mg_per_dL: Swift.Double?
-  public var blood_glucose_samples: [TerraSwift.GlucodeDataSample]?
+  public var blood_glucose_samples: [TerraSwift.GlucoseDataSample]?
   public var urine_color: Swift.String?
   public init(from decoder: Swift.Decoder) throws
 }
