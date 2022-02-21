@@ -60,6 +60,7 @@ public class Terra {
                                                      HKObjectType.quantityType(forIdentifier: .dietaryVitaminA)!,
                                                      HKObjectType.quantityType(forIdentifier: .dietaryEnergyConsumed)!,
                                                      HKObjectType.quantityType(forIdentifier: .dietaryWater)!,
+                                                     HKObjectType.quantityType(forIdentifier: .bloodGlucose)!,
                                                      HKSeriesType.workoutRoute()
                                                     ]), enableHr: Swift.Bool = false) throws
   public func disconnectFromTerra(user_id: Swift.String)
@@ -174,6 +175,40 @@ public struct TerraAthleteData : Swift.Decodable {
   public var city: Swift.String?
   public var state: Swift.String?
   public var country: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct TerraMacrosModel : Swift.Decodable {
+  public var sodium_mg: Swift.Double?
+  public var protein_g: Swift.Double?
+  public var carbohydrates_g: Swift.Double?
+  public var fiber_g: Swift.Double?
+  public var cholesterol_mg: Swift.Double?
+  public var fat_g: Swift.Double?
+  public var sugar_g: Swift.Double?
+  public var vitamin_C_mg: Swift.Double?
+  public var vitamin_A_mg: Swift.Double?
+  public var calories: Swift.Double?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct TerraMealData : Swift.Decodable {
+  public var name: Swift.String?
+  public var macros: TerraSwift.TerraMacrosModel?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct TerraNutritonMetaData : Swift.Decodable {
+  public var start_time: Swift.String?
+  public var end_time: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct TerraNutritonSummary : Swift.Decodable {
+  public var macros: TerraSwift.TerraMacrosModel?
+  public var water_ml: Swift.Double?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct TerraNutritionData : Swift.Decodable {
+  public var meals: [TerraSwift.TerraMealData]?
+  public var summary: TerraSwift.TerraNutritonSummary?
+  public var metadata: TerraSwift.TerraNutritonMetaData?
   public init(from decoder: Swift.Decoder) throws
 }
 public struct authenticateUserPayload : Swift.Decodable {
@@ -295,6 +330,72 @@ public struct OtherDeviceData : Swift.Decodable {
   public var serial_number: Swift.String?
   public var name: Swift.String?
   public var hardware_version: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct BloodPressureSample : Swift.Decodable {
+  public var timestamp: Swift.String?
+  public var diastolic_bp: Swift.Double?
+  public var systolic_bp: Swift.Double?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct MeasurementDataSample : Swift.Decodable {
+  public var measurement_time: Swift.String?
+  public var fat_percentage: Swift.Double?
+  public var BMI: Swift.Double?
+  public var muscle_mass_g: Swift.Double?
+  public var skin_fold_mm: Swift.Double?
+  public var BMR: Swift.Double?
+  public var height_cm: Swift.Double?
+  public var estimated_fitness_age: Swift.Double?
+  public var bone_mass_g: Swift.Double?
+  public var water_percentage: Swift.Double?
+  public var RMR: Swift.Double?
+  public var weight_kg: Swift.Double?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct BodyTemperatureSample : Swift.Decodable {
+  public var timestamp: Swift.String?
+  public var body_temperature_celsius: Swift.Double?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct SkinTemperatureSample : Swift.Decodable {
+  public var timestamp: Swift.String?
+  public var skin_temperature_celsius: Swift.Double?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct TemperatureSample : Swift.Decodable {
+  public var timestamp: Swift.String?
+  public var temperature_celsius: Swift.Double?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct HydrationLevelSample : Swift.Decodable {
+  public var timestamp: Swift.String?
+  public var hydration_level: Swift.Double?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct HydrationMeasurementSample : Swift.Decodable {
+  public var timestamp: Swift.String?
+  public var hydration_kg: Swift.Double?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Vo2MaxSample : Swift.Decodable {
+  public var timestamp: Swift.String?
+  public var max_volume_ml_per_min_per_kg: Swift.Double?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct PulseVelocitySample : Swift.Decodable {
+  public var timestamp: Swift.String?
+  public var pulse_wave_velocity_metres_per_second: Swift.Double?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct AFibClassificationSample : Swift.Decodable {
+  public var timestamp: Swift.String?
+  public var afib_classification: Swift.Int?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Vo2Sample : Swift.Decodable {
+  public var timestamp: Swift.String?
+  public var max_volume_ml_per_min_per_kg: Swift.Double?
   public init(from decoder: Swift.Decoder) throws
 }
 public struct TerraStressData : Swift.Decodable {
@@ -562,44 +663,11 @@ public struct TerraActivityData : Swift.Decodable {
   public var position_data: TerraSwift.TerraPositionData?
   public init(from decoder: Swift.Decoder) throws
 }
-public struct TerraMacrosModel : Swift.Decodable {
-  public var sodium: Swift.Double?
-  public var protein: Swift.Double?
-  public var carbohydrates: Swift.Double?
-  public var fiber: Swift.Double?
-  public var cholesterol: Swift.Double?
-  public var fat: Swift.Double?
-  public var sugar: Swift.Double?
-  public var vitamin_C: Swift.Double?
-  public var vitamin_A: Swift.Double?
-  public var calories: Swift.Double?
-  public init(from decoder: Swift.Decoder) throws
-}
-public struct TerraMealData : Swift.Decodable {
-  public var name: Swift.String?
-  public var macros: TerraSwift.TerraMacrosModel?
-  public init(from decoder: Swift.Decoder) throws
-}
-public struct TerraNutritonMetaData : Swift.Decodable {
-  public var start_time: Swift.String?
-  public var end_time: Swift.String?
-  public init(from decoder: Swift.Decoder) throws
-}
-public struct TerraNutritonSummary : Swift.Decodable {
-  public var macros: TerraSwift.TerraMacrosModel?
-  public var water: Swift.Double?
-  public init(from decoder: Swift.Decoder) throws
-}
-public struct TerraNutritionData : Swift.Decodable {
-  public var meals: [TerraSwift.TerraMealData]?
-  public var summary: TerraSwift.TerraNutritonSummary?
-  public var metadata: TerraSwift.TerraNutritonMetaData?
-  public init(from decoder: Swift.Decoder) throws
-}
 public struct TerraOxygenData : Swift.Decodable {
   public var saturation_percentage: Swift.Double?
   public var max_volume_ml_per_min_per_kg: Swift.Double?
   public var saturation_samples: [TerraSwift.OxygenSaturationSample]?
+  public var vo2_samples: [TerraSwift.Vo2Sample]?
   public init(from decoder: Swift.Decoder) throws
 }
 public struct TerraInsulinData : Swift.Decodable {
@@ -612,44 +680,33 @@ public struct TerraInsulinData : Swift.Decodable {
 }
 public struct TerraBodyMetaData : Swift.Decodable {
   public var start_time: Swift.String?
+  public var end_time: Swift.String?
   public init(from decoder: Swift.Decoder) throws
 }
 public struct TerraBodyHeartData : Swift.Decodable {
-  public var pulse_wave_velocity_metres_per_second: Swift.Double?
-  public var pulse_bpm: Swift.Double?
-  public var hr_variability: Swift.Double?
-  public var afib_classification: Swift.Int?
+  public var pulse_wave_velocity_samples: [TerraSwift.PulseVelocitySample]?
+  public var heart_rate_data: TerraSwift.TerraHeartRateData?
+  public var afib_classifications: [TerraSwift.AFibClassificationSample]?
   public init(from decoder: Swift.Decoder) throws
 }
 public struct TerraBloodPressureData : Swift.Decodable {
-  public var systolic_bp: Swift.Int?
-  public var diastolic_bp: Swift.Int?
+  public var blood_pressure_samples: [TerraSwift.BloodPressureSample]?
   public init(from decoder: Swift.Decoder) throws
 }
 public struct TerraHydrationData : Swift.Decodable {
-  public var hydration_level: Swift.String?
-  public var hydration_kg: Swift.Double?
+  public var hydration_level: [TerraSwift.HydrationLevelSample]?
+  public var hydration_kg: [TerraSwift.HydrationMeasurementSample]?
   public var water_consumption_ml: Swift.Double?
   public init(from decoder: Swift.Decoder) throws
 }
 public struct TerraTemperatureData : Swift.Decodable {
-  public var temperature_celsius: Swift.Double?
-  public var skin_temperature_celsius: Swift.Double?
-  public var body_temperature_celsius: Swift.Double?
+  public var temperature_celsius: [TerraSwift.TemperatureSample]?
+  public var skin_temperature_samples: [TerraSwift.SkinTemperatureSample]?
+  public var body_temperature_samples: [TerraSwift.BodyTemperatureSample]?
   public init(from decoder: Swift.Decoder) throws
 }
 public struct TerraMeasurementData : Swift.Decodable {
-  public var fat_percentage: Swift.Double?
-  public var BMI: Swift.Double?
-  public var muscle_mass_g: Swift.Double?
-  public var skin_fold_mm: Swift.Double?
-  public var BMR: Swift.Double?
-  public var height_cm: Swift.Double?
-  public var estimated_fitness_age: Swift.Double?
-  public var bone_mass_g: Swift.Double?
-  public var water_percentage: Swift.Double?
-  public var RMR: Swift.Double?
-  public var weight_kg: Swift.Double?
+  public var measurements: [TerraSwift.MeasurementDataSample]?
   public init(from decoder: Swift.Decoder) throws
 }
 public struct TerraBodyData : Swift.Decodable {

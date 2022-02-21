@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "TerraSwift"
-  spec.version      = "1.0.12"
+  spec.version      = "1.1.0"
   spec.summary      = "Apple Health SDK for Terra"
   spec.description  = <<-DESC
 			Apple Health SDK for Terra which pushes Apple Health data and enables connecting to the Terra API
