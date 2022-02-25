@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/TerraSwift-Swift.h</key>
 		<data>
-		simLsV/V5kzQRy/TEjI0I8/fW9w=
+		o6XNr5lkb3Z2EQnlOIX3VyDcruY=
 		</data>
 		<key>Headers/TerraSwift.h</key>
 		<data>
@@ -14,31 +14,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		YVbEvwohhPp8fIodsTuW2Z8JIDA=
+		T4Y+6fL9X2O0xg6MpSU50FXu4B4=
 		</data>
 		<key>Modules/TerraSwift.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		ImbYJqeGVgFtPpMKbIq+a5Jh6lQ=
+		Mq3fgvM5nP73mxtcJ9Ec4xRlDkE=
 		</data>
 		<key>Modules/TerraSwift.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		mqnCk0xBLrRetB6jxpqau2fGQKY=
+		aUPw+qbLHmWPM4SmwALlj7FErMc=
 		</data>
 		<key>Modules/TerraSwift.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		wF4bfAFFrps8UgKg433thzOa/mM=
+		mWcr3gMN5/MZaQH23wnt1cYazQc=
 		</data>
 		<key>Modules/TerraSwift.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		ImbYJqeGVgFtPpMKbIq+a5Jh6lQ=
+		Mq3fgvM5nP73mxtcJ9Ec4xRlDkE=
 		</data>
 		<key>Modules/TerraSwift.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		mqnCk0xBLrRetB6jxpqau2fGQKY=
+		aUPw+qbLHmWPM4SmwALlj7FErMc=
 		</data>
 		<key>Modules/TerraSwift.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		wF4bfAFFrps8UgKg433thzOa/mM=
+		mWcr3gMN5/MZaQH23wnt1cYazQc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -51,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			svFjrscP8hIAs+ky+FZnD5RvhdAZjeaYOkeJ4Wg1LKo=
+			+dXB0uQMGSerud84clReseJYLo6Br4Vxcvu+qGSqbF4=
 			</data>
 		</dict>
 		<key>Headers/TerraSwift.h</key>
@@ -65,42 +65,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JlyT3dXXtVLFmPu53zFF6BR5Mb/14GtChM7ZFRXUvRg=
+			Uzif4e07nmtF1Xk+nwpvGh7QYcnPcQnSpvX/Ux4ZGkI=
 			</data>
 		</dict>
 		<key>Modules/TerraSwift.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sqQvr4ByfcswignFz4//OjVM465DPpcOQeg+GZNQYaE=
+			Y8BS+tNkjh08B4cKe3skElMLkHGmvSsAS6FuUQl1P0Q=
 			</data>
 		</dict>
 		<key>Modules/TerraSwift.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WWzGrk260RH3KeIxSkwYkQIc2k7rwDeMFiJKUfzSb08=
+			PG9HyZlTXwX4rWPTbH7BAGoTivwMTb2PRTOQ0h+DLWA=
 			</data>
 		</dict>
 		<key>Modules/TerraSwift.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JlyT3dXXtVLFmPu53zFF6BR5Mb/14GtChM7ZFRXUvRg=
+			Uzif4e07nmtF1Xk+nwpvGh7QYcnPcQnSpvX/Ux4ZGkI=
 			</data>
 		</dict>
 		<key>Modules/TerraSwift.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sqQvr4ByfcswignFz4//OjVM465DPpcOQeg+GZNQYaE=
+			Y8BS+tNkjh08B4cKe3skElMLkHGmvSsAS6FuUQl1P0Q=
 			</data>
 		</dict>
 		<key>Modules/TerraSwift.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WWzGrk260RH3KeIxSkwYkQIc2k7rwDeMFiJKUfzSb08=
+			PG9HyZlTXwX4rWPTbH7BAGoTivwMTb2PRTOQ0h+DLWA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
