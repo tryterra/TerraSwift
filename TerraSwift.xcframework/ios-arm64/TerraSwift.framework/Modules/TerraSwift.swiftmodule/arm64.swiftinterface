@@ -62,7 +62,7 @@ public class Terra {
                                                      HKObjectType.quantityType(forIdentifier: .dietaryWater)!,
                                                      HKObjectType.quantityType(forIdentifier: .bloodGlucose)!,
                                                      HKSeriesType.workoutRoute()
-                                                    ]), enableHr: Swift.Bool = false, completion: @escaping (Swift.Bool) -> Swift.Void = {(success) -> Void in }) throws
+                                                    ]), shareType: Swift.Set<HealthKit.HKSampleType> = Set(), enableHr: Swift.Bool = false, completion: @escaping (Swift.Bool) -> Swift.Void = {(success) -> Void in }) throws
   public func disconnectFromTerra(user_id: Swift.String)
   public func getAthlete(completion: @escaping (Swift.Bool) -> Swift.Void = {(success) -> Void in})
   public func getDaily(startDate: Foundation.Date = Date.todayAt12AM(date: Date()), endDate: Foundation.Date = Date(), completion: @escaping (Swift.Bool) -> Swift.Void = {(success) -> Void in})
