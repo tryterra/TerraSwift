@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/TerraSwift-Swift.h</key>
 		<data>
-		ICS5Gu8k6JK9wFV+2H/gOR9mwqQ=
+		VHaLjCIEDHqsWMxcvKDcqiafpvc=
 		</data>
 		<key>Headers/TerraSwift.h</key>
 		<data>
@@ -14,55 +14,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		8Lc4salMyHqMOY4orQy/MAHi2dw=
+		dQXJKSDgY+cTAYJZrXJRJzdGsLU=
 		</data>
 		<key>Modules/TerraSwift.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		WYkNPEiOPNWXu2X3z3qhvz/lkCA=
+		sic1fSZGcloOGsSZk05Uht8bZLE=
 		</data>
 		<key>Modules/TerraSwift.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		a+eZMAnttXhcPic5yz4LGS/P1RM=
+		UJLrfp7vlh1tMQGnYVQhSvcnLi0=
 		</data>
 		<key>Modules/TerraSwift.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		xzb13zCNC2Cr40y58iPifulLfKQ=
-		</data>
-		<key>Modules/TerraSwift.swiftmodule/arm64.swiftdoc</key>
-		<data>
-		WYkNPEiOPNWXu2X3z3qhvz/lkCA=
-		</data>
-		<key>Modules/TerraSwift.swiftmodule/arm64.swiftinterface</key>
-		<data>
-		a+eZMAnttXhcPic5yz4LGS/P1RM=
-		</data>
-		<key>Modules/TerraSwift.swiftmodule/arm64.swiftmodule</key>
-		<data>
-		xzb13zCNC2Cr40y58iPifulLfKQ=
+		IKlYRgE8jP0MqqkE0B3GSxT2Z+0=
 		</data>
 		<key>Modules/TerraSwift.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		NidMHjWkdzubVeoIoPFT4YUbk0s=
+		uFzFZLspiA6WZkbY/cyHzGvKILU=
 		</data>
 		<key>Modules/TerraSwift.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		V3ZuVPl9/qnrr/0cIEwlJvdEPYA=
+		o6+MIXpKwdj3UmzoE5YqMPkCC5k=
 		</data>
 		<key>Modules/TerraSwift.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		FrFtsVfAKNVrbuCHbvGWTsNoreU=
-		</data>
-		<key>Modules/TerraSwift.swiftmodule/x86_64.swiftdoc</key>
-		<data>
-		NidMHjWkdzubVeoIoPFT4YUbk0s=
-		</data>
-		<key>Modules/TerraSwift.swiftmodule/x86_64.swiftinterface</key>
-		<data>
-		V3ZuVPl9/qnrr/0cIEwlJvdEPYA=
-		</data>
-		<key>Modules/TerraSwift.swiftmodule/x86_64.swiftmodule</key>
-		<data>
-		FrFtsVfAKNVrbuCHbvGWTsNoreU=
+		aWzuAaHEioW/Q6Dig5ppjgxZ4Wo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -75,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aZVNJ6fy66s6QQcDWshhqzlaOMb7h2WXAq94WqzZ/2k=
+			afXEHT3uM/vWZw7vBc+0dhsSdTaV4/ohZcCTazgxCUU=
 			</data>
 		</dict>
 		<key>Headers/TerraSwift.h</key>
@@ -89,84 +65,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Pn3/Bkjuyq0Omt3qHdOsj7kNhRu8cj3euIZKR6WDllQ=
+			bOOW41TmYDNR54LPogL4MUezEQ8Mzvpe5MVeNvoB/8w=
 			</data>
 		</dict>
 		<key>Modules/TerraSwift.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ceTQwcRiW3i3WSeSvFLE5fFlmCSmEKpjVrLmIZIwb3E=
+			RpvbAImuc9RFRGTOQLFaFfgblOF2oVkaGx9Iv3/ta98=
 			</data>
 		</dict>
 		<key>Modules/TerraSwift.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			48jXqFYKov2ZCIzAL0GGQzio/gbJx8Qe4GrBXqi6CKs=
-			</data>
-		</dict>
-		<key>Modules/TerraSwift.swiftmodule/arm64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Pn3/Bkjuyq0Omt3qHdOsj7kNhRu8cj3euIZKR6WDllQ=
-			</data>
-		</dict>
-		<key>Modules/TerraSwift.swiftmodule/arm64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			ceTQwcRiW3i3WSeSvFLE5fFlmCSmEKpjVrLmIZIwb3E=
-			</data>
-		</dict>
-		<key>Modules/TerraSwift.swiftmodule/arm64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			48jXqFYKov2ZCIzAL0GGQzio/gbJx8Qe4GrBXqi6CKs=
+			FaVVhab87fTG6VzzNxbSbf1VIxTGjaaX4pwBq1oQrzc=
 			</data>
 		</dict>
 		<key>Modules/TerraSwift.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CWyRBBHcLyxCOBlKCCGJRciwCxiXeqkdvcytWC2AN4Y=
+			X4OYyl3+Zq8U3l7yZVCVbqL+F5GWMeqCovH9Ip2UXGs=
 			</data>
 		</dict>
 		<key>Modules/TerraSwift.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PPTlhtiFAWqeGpYOjpkdycqD8m4hZMMMh/EjSxriM1g=
+			K72wyf9fxTgBMrXiU+Pn4LsXqO2XEnUJH4uFc/TKHCk=
 			</data>
 		</dict>
 		<key>Modules/TerraSwift.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/wXpzt24cbu8ybRWSMgChxL2oKu63IFYb184tgqx5Dc=
-			</data>
-		</dict>
-		<key>Modules/TerraSwift.swiftmodule/x86_64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			CWyRBBHcLyxCOBlKCCGJRciwCxiXeqkdvcytWC2AN4Y=
-			</data>
-		</dict>
-		<key>Modules/TerraSwift.swiftmodule/x86_64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			PPTlhtiFAWqeGpYOjpkdycqD8m4hZMMMh/EjSxriM1g=
-			</data>
-		</dict>
-		<key>Modules/TerraSwift.swiftmodule/x86_64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			/wXpzt24cbu8ybRWSMgChxL2oKu63IFYb184tgqx5Dc=
+			KF1JTHrygKrh8kda6B216eFCoRg678j7jnaqLqmdb9s=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
